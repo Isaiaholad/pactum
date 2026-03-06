@@ -1,4 +1,5 @@
 const token = () => localStorage.getItem('pactum_token');
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/+$/, '');
 
 async function request(path, options = {}) {
   const headers = { ...(options.headers || {}) };
@@ -8,7 +9,8 @@ async function request(path, options = {}) {
     headers['Content-Type'] = 'application/json';
   }
 
-  const res = await fetch(path, { ...options, headers });
+  const url = `${API_BASE_URL}${path}`;
+  const res = await fetch(url, { ...options, headers });
   const contentType = res.headers.get('content-type') || '';
   const isJson = contentType.includes('application/json');
 
