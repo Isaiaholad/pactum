@@ -109,6 +109,12 @@ pip install -r requirements.txt
 python app.py
 ```
 
+Production start command (Render/Railway):
+
+```bash
+gunicorn app:app --bind 0.0.0.0:$PORT
+```
+
 Frontend (dev):
 
 ```bash

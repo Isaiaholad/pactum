@@ -12,20 +12,4 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    outDir: '../static',
-    emptyOutDir: true,
-    rollupOptions: {
-      output: {
-        entryFileNames: 'assets/index.js',
-        chunkFileNames: 'assets/chunk-[name].js',
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'assets/index.css';
-          }
-          return 'assets/[name][extname]';
-        },
-      },
-    },
-  },
 });
