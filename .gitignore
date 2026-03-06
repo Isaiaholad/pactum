@@ -1,0 +1,16 @@
+# Python
+*.pyc
+__pycache__/
+.venv/
+.env
+
+# Flask DB (if sqlite is used)
+*.db
+instance/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Logs
+*.log
